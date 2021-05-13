@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:v="https://vecta.io/nano"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-167 348.5 96 96"
+	 style="enable-background:new -167 348.5 96 96;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F0B90B;}
+	.st1{fill:#FFFDFA;}
+	.st2{opacity:0.1;fill:none;stroke:#191326;stroke-width:3;enable-background:new    ;}
+	.st3{fill:#F4B731;}
+	.st4{opacity:0.2;fill:none;stroke:#191326;stroke-width:2.837;enable-background:new    ;}
+</style>
+<circle class="st0" cx="-144.3" cy="370.9" r="22.8"/>
+<path class="st1" d="M-152.8,370.9l-3.5,3.5l-3.5-3.5l3.5-3.5L-152.8,370.9z M-144.3,362.4l6,6l3.5-3.5l-6-6l-3.5-3.5l-9.5,9.5
+	l3.5,3.5L-144.3,362.4z M-132.4,367.4l-3.5,3.5l3.5,3.5l3.5-3.5L-132.4,367.4z M-144.3,379.4l-6-6l-3.5,3.5l9.5,9.5l9.5-9.5
+	l-3.5-3.5L-144.3,379.4z M-144.3,374.4l3.5-3.5l-3.5-3.5l-3.5,3.5L-144.3,374.4z"/>
+<circle class="st2" cx="-144.3" cy="370.9" r="21.6"/>
+<circle class="st3" cx="-106.8" cy="409" r="35.5"/>
+<g>
+	<path class="st1" d="M-120.9,390.5h14.8c9,0,15.8,4.9,18.4,12h4.6v4.3h-3.6c0.1,0.7,0.1,1.4,0.1,2.1v0.1c0,0.8,0,1.6-0.1,2.3h3.7
+		v4.3h-4.7c-2.6,7-9.4,11.9-18.3,11.9h-14.8v-11.9h-5.1v-4.3h5.1v-4.5h-5.1v-4.3h5.1V390.5L-120.9,390.5z"/>
+	<path class="st3" d="M-116.8,415.6v8h10.7c6.6,0,11.5-3.2,13.8-8H-116.8z"/>
+	<path class="st3" d="M-91.1,411.3h-25.7v-4.5h25.7c0.1,0.7,0.1,1.4,0.1,2.2v0.1C-91,409.8-91,410.6-91.1,411.3L-91.1,411.3z"/>
+	<path class="st3" d="M-106.1,394.3c6.6,0,11.5,3.3,13.8,8.2h-24.5v-8.2C-116.8,394.3-106.1,394.3-106.1,394.3z"/>
+</g>
+<circle class="st4" cx="-106.8" cy="409" r="34.4"/>
+</svg>
