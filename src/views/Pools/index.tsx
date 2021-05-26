@@ -84,13 +84,12 @@ const Pools: React.FC = () => {
             ))}
           </Route>
         </FlexLayout>
-        <Image
+        <Image 
           mx="auto"
-          mt="12px"
-          src="/images/3d-syrup-bunnies.png"
-          alt="Pancake illustration"
-          width={192}
-          height={184.5}
+          mt="12px" 
+          src="/images/farm-bottom.svg" alt="Candy illustration" 
+          width={96} 
+          height={96} 
         />
       </Page>
     </>

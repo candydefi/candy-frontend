@@ -33,26 +33,38 @@ const config: MenuEntry[] = [
   {
     label: 'Prediction',
     icon: 'PredictionsIcon',
-    href: '/prediction',
+    href: '/#',
     status: {
-      text: 'BETA',
+      text: 'COMING SOON',
       color: 'warning',
     },
   },
   {
     label: 'Lottery',
     icon: 'TicketIcon',
-    href: '/lottery',
+    href: '/#',
+    status: {
+      text: 'COMING SOON',
+      color: 'warning',
+    },
   },
   {
     label: 'Collectibles',
     icon: 'NftIcon',
-    href: '/collectibles',
+    href: '/#',
+    status: {
+      text: 'COMING SOON',
+      color: 'warning',
+    },
   },
   {
     label: 'Team Battle',
     icon: 'TeamBattleIcon',
-    href: '/competition',
+    href: '/#',
+    status: {
+      text: 'COMING SOON',
+      color: 'warning',
+    },
   },
   {
     label: 'Teams & Profile',
@@ -97,7 +109,11 @@ const config: MenuEntry[] = [
   {
     label: 'IFO',
     icon: 'IfoIcon',
-    href: '/ifo',
+    href: '/#',
+    status: {
+      text: 'COMING SOON',
+      color: 'warning',
+    },
   },
   {
     label: 'More',

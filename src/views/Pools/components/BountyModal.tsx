@@ -74,7 +74,7 @@ const BountyModal: React.FC<BountyModalProps> = ({
       <Flex alignItems="flex-start" justifyContent="space-between">
         <Text>{t("You'll claim")}</Text>
         <Flex flexDirection="column">
-          <Text bold>{cakeCallBountyToDisplay} CAKE</Text>
+          <Text bold>{cakeCallBountyToDisplay} CANDY</Text>
           <Text fontSize="12px" color="textSubtle">
             ~ {dollarCallBountyToDisplay} USD
           </Text>
@@ -86,7 +86,7 @@ const BountyModal: React.FC<BountyModalProps> = ({
           {t('Pool total pending yield')}
         </Text>
         <Text fontSize="14px" color="textSubtle">
-          {totalYieldToDisplay} CAKE
+          {totalYieldToDisplay} CANDY
         </Text>
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px">

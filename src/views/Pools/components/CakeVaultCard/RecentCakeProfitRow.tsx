@@ -23,7 +23,7 @@ const RecentCakeProfitCountdownRow: React.FC<RecentCakeProfitRowProps> = ({
 
   return (
     <Flex alignItems="center" justifyContent="space-between">
-      <Text fontSize="14px">{t('Recent CAKE profit:')}</Text>
+      <Text fontSize="14px">{t('Recent CANDY profit:')}</Text>
       {shouldDisplayCakeProfit && (
         <RecentCakeProfitBalance
           cakeAtLastUserAction={cakeAtLastUserAction}

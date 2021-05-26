@@ -29,7 +29,7 @@ const AprRow: React.FC<AprRowProps> = ({
   const { t } = useTranslation()
   const { stakingToken, earningToken, totalStaked, isFinished, tokenPerBlock } = pool
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    t('APY includes compounding, APR doesn’t. This pool’s CAKE is compounded automatically, so we show APY.'),
+    t('APY includes compounding, APR doesn’t. This pool’s CANDY is compounded automatically, so we show APY.'),
     { placement: 'bottom-end' },
   )
 
