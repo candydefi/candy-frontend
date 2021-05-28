@@ -13,9 +13,10 @@ import WinCard from 'views/Home/components/WinCard'
 
 const Hero = styled.div`
   align-items: center;
-  background-image: url('/images/pan-bg-mobile.svg');
+  background-image: url('/images/home-header.png');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-size: 250px;
+  background-position: top -20px center;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -25,9 +26,10 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/pan-bg2.svg'), url('/images/pan-bg.svg');
-    background-position: left center, right center;
-    height: 165px;
+    background-image: url(/images/home-header.png), url(/images/home-header.png);
+    background-position: left center, right center ;
+    background-size: 350px, 350px;
+    height: 220px;
     padding-top: 0;
   }
 `
