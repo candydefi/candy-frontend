@@ -18,8 +18,8 @@ const Hero = styled.div`
   background-size: 250px;
   background-position: top -20px center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   margin: auto;
   margin-bottom: 32px;
   padding-top: 116px;
@@ -31,6 +31,11 @@ const Hero = styled.div`
     background-size: 350px, 350px;
     height: 220px;
     padding-top: 0;
+    justify-content: flex-end;
+
+    & > div {
+      margin-top: 55px;
+    }
   }
 `
 
