@@ -35,6 +35,7 @@ const farms: FarmConfig[] = [
     token: tokens.busd,
     quoteToken: tokens.wbnb,
   },
+  
   {
     pid: 3,
     lpSymbol: 'ALPA-BNB LP',

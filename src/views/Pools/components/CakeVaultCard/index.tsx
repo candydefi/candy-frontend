@@ -4,7 +4,7 @@ import { Box, CardBody, Flex, Text } from '@pancakeswap-libs/uikit'
 import { useTranslation } from 'contexts/Localization'
 import UnlockButton from 'components/UnlockButton'
 import { getAddress } from 'utils/addressHelpers'
-import { useGetApiPrice } from 'state/hooks'
+import { useGetApiPrice, usePriceCakeBusd } from 'state/hooks'
 import useLastUpdated from 'hooks/useLastUpdated'
 import useGetVaultUserInfo from 'hooks/cakeVault/useGetVaultUserInfo'
 import useGetVaultSharesInfo from 'hooks/cakeVault/useGetVaultSharesInfo'
@@ -32,7 +32,7 @@ const CakeVaultCard: React.FC<{ pool: Pool; account: string }> = ({ pool, accoun
   //   Estimate & manual for now. 288 = once every 5 mins. We can change once we have a better sense of this
   const timesCompoundedDaily = 288
   const accountHasSharesStaked = userInfo.shares && userInfo.shares.gt(0)
-  const stakingTokenPrice = useGetApiPrice(stakingToken.address ? getAddress(stakingToken.address) : '')
+  const stakingTokenPrice = usePriceCakeBusd().toNumber()
   const isLoading = !pool.userData || !userInfo.shares
   const performanceFeeAsDecimal = vaultFees.performanceFee && parseInt(vaultFees.performanceFee, 10) / 100
 

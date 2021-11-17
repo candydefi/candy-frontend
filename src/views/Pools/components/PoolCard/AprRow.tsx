@@ -5,7 +5,7 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import { getPoolApr } from 'utils/apr'
 import { getAddress } from 'utils/addressHelpers'
 import { tokenEarnedPerThousandDollarsCompounding, getRoi } from 'utils/compoundApyHelpers'
-import { useGetApiPrice } from 'state/hooks'
+import { useGetApiPrice, usePriceCakeBusd } from 'state/hooks'
 import Balance from 'components/Balance'
 import ApyCalculatorModal from 'components/ApyCalculatorModal'
 import { Pool } from 'state/types'
@@ -33,7 +33,12 @@ const AprRow: React.FC<AprRowProps> = ({
     { placement: 'bottom-end' },
   )
 
-  const earningTokenPrice = useGetApiPrice(earningToken.address ? getAddress(earningToken.address) : '')
+  const cakePrice = usePriceCakeBusd()
+  let earningTokenPrice = useGetApiPrice(earningToken.address ? getAddress(earningToken.address) : '')
+  if (earningToken.symbol === 'CANDY') {
+    earningTokenPrice = cakePrice.toNumber()
+  }
+
   const apr = getPoolApr(
     stakingTokenPrice,
     earningTokenPrice,

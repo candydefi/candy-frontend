@@ -312,3 +312,53 @@ export const useGetCollectibles = () => {
     nftsInWallet: Nfts.filter((nft) => identifiers.includes(nft.identifier)),
   }
 }
+
+export const useTotalValue = (): BigNumber => {
+  const farms = useFarms()
+  const { account } = useWeb3React()
+  const pools = usePools(account)
+
+  const bnbPrice = usePriceBnbBusd();
+  const cakePrice = usePriceCakeBusd();
+  const tokenPrices = useGetApiPrices()
+  let value = new BigNumber(0);
+
+  // Farms locked value 
+  for (let i = 0; i < farms.data.length; i++) {
+    const farm = farms.data[i]
+    if (farm.lpTotalInQuoteToken) {
+      let val;
+      if (farm.quoteToken.symbol === "BNB") {
+        val = (bnbPrice.times(farm.lpTotalInQuoteToken));
+      } else if (farm.quoteToken.symbol === "CANDY") {
+        val = (cakePrice.times(farm.lpTotalInQuoteToken));
+      } else {
+        const quoteTokenPrice = tokenPrices[getAddress(farm.quoteToken.address).toLowerCase()]
+        val = (new BigNumber(quoteTokenPrice).times(farm.lpTotalInQuoteToken));
+        // val = farm.lpTotalInQuoteToken
+      }
+      value = value.plus(val);
+    }
+  }
+
+  // Pools locked value
+  for (let i = 0; i < pools.length; i++) {
+    const pool = pools[i]
+    const totalStaked = getBalanceNumber(pool.totalStaked, pool.stakingToken.decimals)
+    if (totalStaked) {
+      let val;
+      if (pool.stakingToken.symbol === "BNB") {
+        val = (bnbPrice.times(totalStaked));
+      } else if (pool.stakingToken.symbol === "CANDY") {
+        val = (cakePrice.times(totalStaked));
+      } else {
+        const stakingTokenPrice = tokenPrices[getAddress(pool.stakingToken.address).toLowerCase()]
+        val = new BigNumber(totalStaked).times(new BigNumber(stakingTokenPrice));
+        // val = totalStaked
+      }
+      value = value.plus(val);
+    }
+  }
+  
+  return value;
+}

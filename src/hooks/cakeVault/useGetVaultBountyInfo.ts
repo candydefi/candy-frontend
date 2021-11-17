@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import BigNumber from 'bignumber.js'
-import { useGetApiPrice } from 'state/hooks'
+import { useGetApiPrice, usePriceCakeBusd } from 'state/hooks'
 import { useCakeVaultContract } from 'hooks/useContract'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 import makeBatchRequest from 'utils/makeBatchRequest'
@@ -13,7 +13,7 @@ const useGetVaultBountyInfo = (refresh?: number) => {
   const [dollarCallBountyToDisplay, setDollarBountyToDisplay] = useState(null)
   const [cakeCallBountyToDisplay, setCakeBountyToDisplay] = useState(null)
 
-  const cakePrice = useGetApiPrice(getCakeAddress())
+  const cakePrice = usePriceCakeBusd()
 
   useEffect(() => {
     // Call contract to get estimated rewards

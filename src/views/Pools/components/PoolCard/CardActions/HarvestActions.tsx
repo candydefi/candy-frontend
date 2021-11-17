@@ -5,7 +5,7 @@ import { Token } from 'config/constants/types'
 import { getAddress } from 'utils/addressHelpers'
 import { useTranslation } from 'contexts/Localization'
 import { getFullDisplayBalance, getBalanceNumber, formatNumber } from 'utils/formatBalance'
-import { useGetApiPrice } from 'state/hooks'
+import { useGetApiPrice, usePriceCakeBusd } from 'state/hooks'
 import CollectModal from '../Modals/CollectModal'
 
 interface HarvestActionsProps {
@@ -24,7 +24,11 @@ const HarvestActions: React.FC<HarvestActionsProps> = ({
   isLoading = false,
 }) => {
   const { t } = useTranslation()
-  const earningTokenPrice = useGetApiPrice(earningToken.address ? getAddress(earningToken.address) : '')
+  const cakePrice = usePriceCakeBusd()
+  let earningTokenPrice = useGetApiPrice(earningToken.address ? getAddress(earningToken.address) : '')
+  if (earningToken.symbol === 'CANDY') {
+    earningTokenPrice = cakePrice.toNumber()
+  }
   const fullBalance = getFullDisplayBalance(earnings, earningToken.decimals)
   const formattedBalance = formatNumber(getBalanceNumber(earnings, earningToken.decimals), 3, 3)
   const earningsDollarValue = formatNumber(

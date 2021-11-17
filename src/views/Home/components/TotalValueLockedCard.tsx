@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Card, CardBody, Heading, Skeleton, Text } from '@pancakeswap-libs/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
+import { useTotalValue } from 'state/hooks'
 
 const StyledTotalValueLockedCard = styled(Card)`
   align-items: center;
@@ -12,8 +13,9 @@ const StyledTotalValueLockedCard = styled(Card)`
 
 const TotalValueLockedCard = () => {
   const { t } = useTranslation()
-  const data = useGetStats()
-  const tvl = data ? data.total_value_locked_all.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
+  // const data = useGetStats()
+  const totalValue = useTotalValue()
+  // const tvl = data ? data.total_value_locked_all.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
 
   return (
     <StyledTotalValueLockedCard>
@@ -21,9 +23,9 @@ const TotalValueLockedCard = () => {
         <Heading size="lg" mb="24px">
           {t('Total Value Locked (TVL)')}
         </Heading>
-        {data ? (
+        {totalValue ? (
           <>
-            <Heading size="xl">{`$${tvl}`}</Heading>
+            <Heading size="xl">{`$${totalValue.toFixed(0)}`}</Heading>
             <Text color="textSubtle">{t('Across all LPs and Syrup Pools')}</Text>
           </>
         ) : (

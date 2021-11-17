@@ -49,6 +49,7 @@ const CakeVaultCardActions: React.FC<{
       try {
         const response = await cakeContract.methods.allowance(account, cakeVaultContract.options.address).call()
         const currentAllowance = new BigNumber(response)
+        console.log("allowance ", cakeVaultContract.options.address, currentAllowance.toString())
         setIsVaultApproved(currentAllowance.gt(0))
       } catch (error) {
         setIsVaultApproved(false)
